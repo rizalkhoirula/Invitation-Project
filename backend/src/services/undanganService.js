@@ -7,7 +7,7 @@ const createUndangan = async (data) => {
         const savedUndangan = await undangan.save();
 
         const checkInLink = `http://localhost:3000/api/check-in/${savedUndangan._id}`;
-        await sendEmailWithQRCode(savedUndangan.Name, savedUndangan.email, checkInLink);
+        await sendEmailWithQRCode(savedUndangan.name, savedUndangan.email, checkInLink);
 
         return savedUndangan;
     } catch (error) {
@@ -86,6 +86,14 @@ const deleteUndangan = async (id) => {
         throw new Error('Gagal menghapus undangan: ' + error.message);
     }
 };
+const getAllUcapans = async () => {
+    try {
+        const ucapans = await Undangan.find().select('name ucapan'); // Mengambil hanya nama dan kolom ucapan
+        return ucapans;
+    } catch (error) {
+        throw new Error('Gagal mendapatkan data ucapan: ' + error.message);
+    }
+};
 
 module.exports = {
     createUndangan,
@@ -93,5 +101,6 @@ module.exports = {
     getUndanganById,
     updateUndanganStatus,
     deleteUndangan,
-    checkIn
+    checkIn,
+    getAllUcapans
 };

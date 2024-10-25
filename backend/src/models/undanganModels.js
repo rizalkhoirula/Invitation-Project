@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const UndanganSchema = new mongoose.Schema({
-    Name: { 
+    name: { 
         type: String, 
         required: true 
     },
@@ -11,8 +11,9 @@ const UndanganSchema = new mongoose.Schema({
     phone: { 
         type: String 
     },
-    message: { 
-        type: String 
+    ucapan: { 
+        type: String ,
+        required: true
     },
     status: { 
         type: String, 

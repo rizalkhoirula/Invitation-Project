@@ -6,6 +6,8 @@ const undanganRoutes = require('./src/routes/undanganRoutes');
 const kehadiranRoutes = require('./src/routes/kehadiranRoutes');
 
 const app = express();
+const cors = require('cors');
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/qrcodes', express.static(path.join(__dirname, 'qrcodes')));

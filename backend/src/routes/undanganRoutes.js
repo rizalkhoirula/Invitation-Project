@@ -20,6 +20,18 @@ router.get('/undangan', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+router.get('/ucapan', async (req, res) => {
+    try {
+        const ucapans = await undanganServices.getAllUcapans();
+        const filteredUcapans = ucapans.map(ucapan => ({
+            name: ucapan.name,
+            message: ucapan.ucapan
+        }));
+        res.status(200).json(filteredUcapans);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 router.get('/undangan/:id', async (req, res) => {
     try {

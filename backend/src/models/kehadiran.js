@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const KehadiranSchema = new mongoose.Schema({
-    Name: { 
+    name: { 
       type: String, 
       required: true 
     },

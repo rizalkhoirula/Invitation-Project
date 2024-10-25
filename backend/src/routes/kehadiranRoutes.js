@@ -18,7 +18,7 @@ router.get('/check-in/:id', async (req, res) => {  // Ubah dari 'post' ke 'get'
         }
 
         const kehadiranData = {
-            Name: undangan.Name,
+            name: undangan.name,
             IdUndangan: undangan._id,
             JamKehadiran: new Date()
         };
