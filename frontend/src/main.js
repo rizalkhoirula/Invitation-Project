@@ -21,8 +21,7 @@ import './assets/js/simplyCountdown';
 // import $ from 'jquery';
 // window.$ = window.jQuery = $;
 import './assets/styles.scss';
-import PrimeVue from 'primevue/config';
-import Chart from 'primevue/chart';
+
 // import 'primevue/resources/primevue.min.css';           // PrimeVue core CSS
 // import 'primeicons/primeicons.css';  
 // app.use(PrimeVue, { ripple: true });
@@ -34,7 +33,6 @@ import App from './App.vue';
 
 createApp(App)
   .use(router)  
-  .use(PrimeVue,{ripple:true})
   .mount('#app');
 
  
