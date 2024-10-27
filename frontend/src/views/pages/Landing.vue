@@ -373,7 +373,7 @@ const wish = ref('');
 // Function to fetch ucapans
 const fetchUcapans = async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/ucapan');
+    const response = await axios.get('http://apiinvit.vercel.app/api/ucapan');
     ucapans.value = response.data; // Assign fetched data to ucapans
   } catch (error) {
     console.error('Error fetching ucapans:', error);
@@ -383,7 +383,7 @@ const fetchUcapans = async () => {
 // Function to submit attendance form
 const submitForm = async () => {
   try {
-    const response = await axios.post('http://localhost:3000/api/undangan', {
+    const response = await axios.post('http://apiinvit.vercel.app/api/undangan', {
       name: name.value,
       email: email.value,
       ucapan: wish.value
